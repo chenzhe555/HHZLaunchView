@@ -139,8 +139,7 @@
     _time += 0.5;
     if (_time > _MaxTime)
     {
-        [self.timer invalidate];
-        self.timer = nil;
+        [self freeSomeThings];
         [self closeLaunchView];
     }
 }
@@ -148,8 +147,7 @@
 -(void)closeImmediately
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    _launchView = nil;
-    _closeBtn = nil;
+    [self freeSomeThings];
     [self removeFromSuperview];
 }
 
@@ -158,9 +156,6 @@
 -(void)closeLaunchView
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [NSTimer scheduledTimerWithTimeInterval:0.4f repeats:NO block:^(NSTimer * _Nonnull timer) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
-    }];
     [self hideWithAnimate];
 }
 
@@ -190,10 +185,18 @@
 
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
     [self.layer removeAllAnimations];
-    _launchView = nil;
-    _closeBtn = nil;
+    [self freeSomeThings];
     [self removeFromSuperview];
+}
+
+-(void)freeSomeThings
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
 }
 
 @end
