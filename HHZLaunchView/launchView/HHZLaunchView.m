@@ -158,6 +158,9 @@
 -(void)closeLaunchView
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSTimer scheduledTimerWithTimeInterval:0.4f repeats:NO block:^(NSTimer * _Nonnull timer) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
+    }];
     [self hideWithAnimate];
 }
 
@@ -187,8 +190,6 @@
 
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    NSLog(@"这里进来了几次???");
-    [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
     [self.layer removeAllAnimations];
     _launchView = nil;
     _closeBtn = nil;
