@@ -65,7 +65,7 @@
         _closeBtn.layer.masksToBounds = YES;
         [_closeBtn setTitle:@"跳过" forState:UIControlStateNormal];
         _closeBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-        [_closeBtn addTarget:self action:@selector(closeLocloseLaunchView) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(closeLaunchView) forControlEvents:UIControlEventTouchUpInside];
         [_closeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self addSubview:_closeBtn];
         
@@ -141,7 +141,7 @@
     {
         [self.timer invalidate];
         self.timer = nil;
-        [self closeLocloseLaunchView];
+        [self closeLaunchView];
     }
 }
 
@@ -153,16 +153,12 @@
     [self removeFromSuperview];
 }
 
-/** 正常关闭launch */
-- (void)closeLocloseLaunchView{
+
+/** 正常展示时间结束/点击关闭按钮关闭launch */
+-(void)closeLaunchView
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self hideWithAnimate];
-}
-
-// 通知关闭launch
--(void)closeLaunchView_Notification
-{
-    [self closeLocloseLaunchView];
 }
 
 -(void)hideWithAnimate
