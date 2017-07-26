@@ -187,11 +187,12 @@
 
 -(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
+    NSLog(@"这里进来了几次???");
+    [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
     [self.layer removeAllAnimations];
     _launchView = nil;
     _closeBtn = nil;
     [self removeFromSuperview];
-    [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
 }
 
 @end
