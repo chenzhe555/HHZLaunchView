@@ -13,6 +13,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+#define HHZLaunchViewClosed @"HHZLaunchViewClosed"
 
 @protocol HHZLaunchViewDelegate <NSObject>
 /**

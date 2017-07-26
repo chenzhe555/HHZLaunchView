@@ -195,6 +195,7 @@
     _launchView = nil;
     _closeBtn = nil;
     [self removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] postNotificationName:HHZLaunchViewClosed object:nil];
 }
 
 @end
