@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHZLaunchView"
-  s.version      = "0.0.1.4"
+  s.version      = "0.0.1.6"
   s.summary      = "LaunchView"
 
   # This description is used to generate tags and improve search results.
@@ -141,5 +141,5 @@ Pod::Spec.new do |s|
   s.dependency "HHZUtils", "~> 0.0.2"
   s.dependency "HHZCategory", "~> 0.0.2"
   s.dependency "HHZBaseClass", "~> 0.0.1"
-  s.dependency "SDWebImage", "~> 4.0.0"
+  s.dependency "SDWebImage", "~> 3.8.2"
 end
