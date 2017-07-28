@@ -7,7 +7,7 @@ target 'HHZLaunchView' do
   pod 'HHZUtils', '~> 0.0.2'
   pod 'HHZCategory', '~> 0.0.2'
   pod 'HHZBaseClass', '~> 0.0.1'
-  pod 'SDWebImage', '~> 4.0.0'
+  pod 'SDWebImage', '~> 3.8.2'
   # Pods for HHZLaunchView
 
 end

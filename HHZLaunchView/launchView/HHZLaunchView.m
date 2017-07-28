@@ -95,23 +95,23 @@
 {
     if (imgURL.length > 0 && !([imgURL isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:kHHZLaunchViewImgNSStringURL]]))
     {
-        if (!isUrlCache)
-        {
-            [[SDImageCache sharedImageCache] removeImageForKey:imgURL withCompletion:^{
-                
-            }];
-        }
-        
-        [[[SDWebImageManager sharedManager] imageDownloader] downloadImageWithURL:[NSURL URLWithString:imgURL] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
-            
-        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
-            if (!data)
-            {
-                [[NSUserDefaults standardUserDefaults] setObject:imgURL forKey:kHHZLaunchViewImgNSStringURL];
-                [[NSFileManager defaultManager] removeItemAtPath:[HHZPathTool getDocumentPath:kHHZLaunchViewImgURL] error:nil];
-                [data writeToFile:[HHZPathTool getDocumentPath:kHHZLaunchViewImgURL] atomically:YES];
-            }
-        }];
+//        if (!isUrlCache)
+//        {
+//            [[SDImageCache sharedImageCache] removeImageForKey:imgURL withCompletion:^{
+//                
+//            }];
+//        }
+//        
+//        [[[SDWebImageManager sharedManager] imageDownloader] downloadImageWithURL:[NSURL URLWithString:imgURL] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+//            
+//        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+//            if (!data)
+//            {
+//                [[NSUserDefaults standardUserDefaults] setObject:imgURL forKey:kHHZLaunchViewImgNSStringURL];
+//                [[NSFileManager defaultManager] removeItemAtPath:[HHZPathTool getDocumentPath:kHHZLaunchViewImgURL] error:nil];
+//                [data writeToFile:[HHZPathTool getDocumentPath:kHHZLaunchViewImgURL] atomically:YES];
+//            }
+//        }];
     }
     
 }
