@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHZLaunchView"
-  s.version      = "0.0.1.6"
+  s.version      = "0.0.1.7"
   s.summary      = "LaunchView"
 
   # This description is used to generate tags and improve search results.
@@ -138,8 +138,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency "HHZUtils", "~> 0.0.2"
-  s.dependency "HHZCategory", "~> 0.0.2"
-  s.dependency "HHZBaseClass", "~> 0.0.1"
   s.dependency "SDWebImage", "~> 3.8.2"
 end
