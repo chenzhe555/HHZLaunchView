@@ -7,6 +7,7 @@
 //
 
 #import "HHZViewController.h"
+#import <HHZUtils/HHZMethodException.h>
 
 @interface HHZViewController ()
 
@@ -28,12 +29,12 @@
 
 -(void)initializeData
 {
-    
+    @throw [HHZMethodException exceptionWithClass:NSStringFromClass([self class]) Method:NSStringFromSelector(_cmd)];
 }
 
 -(void)createMainView
 {
-    
+    @throw [HHZMethodException exceptionWithClass:NSStringFromClass([self class]) Method:NSStringFromSelector(_cmd)];
 }
 
 -(void)back
