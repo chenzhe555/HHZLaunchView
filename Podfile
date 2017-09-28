@@ -9,7 +9,7 @@ target 'HHZLaunchView' do
   pod 'HHZUtils', :git => 'https://github.com/chenzhe555/HHZUtils.git'
   pod 'HHZCategory', :git => 'https://github.com/chenzhe555/HHZCategory.git’
   pod 'HHZBaseClass', :git => 'https://github.com/chenzhe555/HHZBaseClass.git’
-  pod 'SDWebImage', '~> 3.8.2'  
+  pod 'SDWebImage', '> 3.8.2'  
   # Pods for HHZLaunchView
 
 end
